@@ -33,7 +33,7 @@ func (z *ZLog) Log(ctx context.Context, source, msg string, err error, params ma
 
 	if user, ok := ctx.Value(chisk.KeyString("_authuser")).(*chisk.AuthUser); ok {
 		params["id"] = user.ID
-		params["username"] = user.Username
+		params["username"] = user.DisplayName
 	}
 
 	if err != nil {
